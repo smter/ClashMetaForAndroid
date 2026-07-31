@@ -41,6 +41,9 @@ cmake-build-*
 # local.properties
 local.properties
 
+# Local agent skill mirrors (symlinks, machine-specific)
+.claude/
+
 
 # tracker
 tracker.properties
