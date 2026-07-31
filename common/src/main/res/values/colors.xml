@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Catppuccin latte Blue / Peach：品牌图标固定色（不随主题切换）
+         映射：#3372b6→Blue #1e66f5、#f39800→Peach #fe640b -->
+    <color name="brand_blue">#1e66f5</color>
+    <color name="brand_peach">#fe640b</color>
+</resources>

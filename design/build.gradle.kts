@@ -2,12 +2,22 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("com.android.library")
+    alias(libs.plugins.compose.compiler)
+}
+
+android {
+    buildFeatures {
+        compose = true
+    }
 }
 
 dependencies {
     implementation(project(":common"))
     implementation(project(":core"))
     implementation(project(":service"))
+
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.material3)
 
     implementation(libs.kotlin.coroutine)
     implementation(libs.androidx.core)

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_clash">#1E4376</color>
+    <!-- 品牌色令牌已移至 common 模块（brand_blue / brand_peach），此处不再重复定义 -->
 </resources>
