@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Catppuccin 语义角色令牌（latte/mocha 双令牌集）
+    映射依据：docs/research/catppuccin-role-mapping.md（XML 主题角色表）
+    令牌命名：color_<role>_light = latte，color_<role>_dark = mocha
+-->
 <resources>
-    <color name="color_clash_light">#1e4376</color>
-    <color name="color_clash_dark">#1976d2</color>
-    <color name="color_system_ui_overlay">#50000000</color>
-    <color name="color_light_background">#FFFAFAFA</color>
-    <color name="color_dark_background">#FF121212</color>
-    <color name="color_dark_surface">#FF202020</color>
-    <color name="color_light_clash_stopped">#FF808080</color>
-    <color name="color_light_control_disabled">#FFD3D3D3</color>
-    <color name="color_dark_control_disabled">#FF808080</color>
-    <color name="color_error">#FFB00020</color>
+    <!-- primary（主色 Sapphire） -->
+    <color name="color_primary_light">#209fb5</color>
+    <color name="color_primary_dark">#74c7ec</color>
+
+    <!-- onPrimary -->
+    <color name="color_on_primary_light">#eff1f5</color>
+    <color name="color_on_primary_dark">#11111b</color>
+
+    <!-- surface -->
+    <color name="color_surface_light">#ccd0da</color>
+    <color name="color_surface_dark">#313244</color>
+
+    <!-- 控件文本（colorControlNormal） -->
+    <color name="color_control_normal_light">#4c4f69</color>
+    <color name="color_control_normal_dark">#cdd6f4</color>
+
+    <!-- 控件激活（colorControlActivated） -->
+    <color name="color_control_activated_light">#209fb5</color>
+    <color name="color_control_activated_dark">#74c7ec</color>
+
+    <!-- 控件禁用（colorControlDisabled） -->
+    <color name="color_control_disabled_light">#9ca0b0</color>
+    <color name="color_control_disabled_dark">#7f849c</color>
+
+    <!-- Clash 停止状态（中性灰） -->
+    <color name="color_clash_stopped_light">#8c8fa1</color>
+    <color name="color_clash_stopped_dark">#6c7086</color>
+
+    <!-- 错误色 -->
+    <color name="color_error_light">#d20f39</color>
+    <color name="color_error_dark">#f38ba8</color>
+
+    <!-- 窗口背景 -->
+    <color name="color_background_light">#eff1f5</color>
+    <color name="color_background_dark">#1e1e2e</color>
+
+    <!-- 系统栏深色遮罩：Crust (mocha) #11111b @ 31% alpha，两主题同用 -->
+    <color name="color_system_ui_overlay">#4f11111b</color>
 </resources>
