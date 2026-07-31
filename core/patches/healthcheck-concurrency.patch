@@ -1,0 +1,13 @@
+diff --git a/adapter/provider/healthcheck.go b/adapter/provider/healthcheck.go
+index bd0e08c31..000000000 100644
+--- a/adapter/provider/healthcheck.go
++++ b/adapter/provider/healthcheck.go
+@@ -90,7 +90,7 @@ func (hc *HealthCheck) check() {
+ 		id := utils.NewUUIDV4().String()
+ 		log.Debugln("Start New Health Checking {%s}", id)
+ 		b := new(errgroup.Group)
+-		b.SetLimit(10)
++		b.SetLimit(100)
+ 
+ 		// execute default health check
+ 		option := &extraOption{filters: nil, expectedStatus: hc.expectedStatus}

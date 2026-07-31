@@ -56,9 +56,35 @@ dependencies {
     implementation(libs.kotlin.serialization.json)
 }
 
+val healthCheckPatch = rootProject.file("core/patches/healthcheck-concurrency.patch")
+val clashSource = file("src/foss/golang/clash")
+val patchLock = Any()
+
 afterEvaluate {
     tasks.withType(GolangBuildTask::class.java).forEach {
         it.inputs.dir(golangSource)
+        it.inputs.file(healthCheckPatch)
+
+        it.doFirst {
+            synchronized(patchLock) {
+                require(clashSource.isDirectory) {
+                    "mihomo submodule not checked out: run `git submodule update --init --force`"
+                }
+
+                val alreadyApplied = project.exec {
+                    workingDir(clashSource)
+                    commandLine("git", "apply", "--reverse", "--check", healthCheckPatch.absolutePath)
+                    isIgnoreExitValue = true
+                }
+
+                if (alreadyApplied.exitValue != 0) {
+                    project.exec {
+                        workingDir(clashSource)
+                        commandLine("git", "apply", healthCheckPatch.absolutePath)
+                    }
+                }
+            }
+        }
     }
 }
 
